@@ -1,0 +1,11 @@
+/repos/game-inventory-tracker/backend/target/debug/deps/rand_core-86b91bfb1429e276.d: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/block.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/utils.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/seedable_rng.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/unwrap_err.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/word.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/../README.md
+
+/repos/game-inventory-tracker/backend/target/debug/deps/librand_core-86b91bfb1429e276.rmeta: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/block.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/utils.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/seedable_rng.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/unwrap_err.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/word.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/../README.md
+
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/lib.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/block.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/utils.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/seedable_rng.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/unwrap_err.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/word.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand_core-0.10.1/src/../README.md:

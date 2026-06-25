@@ -1,0 +1,12 @@
+/repos/game-inventory-tracker/backend/target/debug/deps/sqlx-b69cfac18203b665.d: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/mod.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/mod.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/ty_match.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/spec_error.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.md /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/test.md /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/install_drivers_note.md
+
+/repos/game-inventory-tracker/backend/target/debug/deps/libsqlx-b69cfac18203b665.rmeta: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/mod.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/mod.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/ty_match.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/spec_error.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.md /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/test.md /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/install_drivers_note.md
+
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/mod.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/mod.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/ty_match.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/spec_error.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/lib.md:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/macros/test.md:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-0.9.0/src/any/install_drivers_note.md:

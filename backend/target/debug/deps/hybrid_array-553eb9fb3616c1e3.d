@@ -1,0 +1,11 @@
+/repos/game-inventory-tracker/backend/target/debug/deps/hybrid_array-553eb9fb3616c1e3.d: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/sizes.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/flatten.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/from_fn.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/iter.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/traits.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/../README.md
+
+/repos/game-inventory-tracker/backend/target/debug/deps/libhybrid_array-553eb9fb3616c1e3.rmeta: /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/lib.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/sizes.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/flatten.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/from_fn.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/iter.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/traits.rs /home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/../README.md
+
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/lib.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/sizes.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/flatten.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/from_fn.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/iter.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/traits.rs:
+/home/kodnova/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hybrid-array-0.4.12/src/../README.md:

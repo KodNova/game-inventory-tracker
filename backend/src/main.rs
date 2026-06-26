@@ -1,9 +1,12 @@
+use core::result::Result::{Err, Ok};
+
 use axum::{
     Json, Router,
     extract::State,
     http::{StatusCode, response},
     routing::{get, post},
 };
+use serde::Deserialize;
 use sqlx::PgPool;
 use tower_http::cors::{Any, CorsLayer};
 
@@ -32,27 +35,32 @@ async fn main() {
     axum::serve(listener, app).await.expect("serve fail");
 }
 
+#[derive(Deserialize)]
 struct Game {
     rawg_id: i32,
     name: String,
     user_token: String,
 }
 
-async fn add_game_handler(State(db): State<PgPool>) -> StatusCode {
-    let test_game = Game {
-        rawg_id: 1337,
-        name: "leet".to_string(),
-        user_token: "test".to_string(),
-    };
+async fn add_game_handler(State(db): State<PgPool>, Json(payload): Json<Game>) -> StatusCode {
+    let db_res = add_game_db(db, payload).await;
+
+    match db_res {
+        Ok(_) => StatusCode::OK,
+        Err(_) => StatusCode::INTERNAL_SERVER_ERROR,
+    }
+}
+
+// only adds to db nothing else
+async fn add_game_db(db: PgPool, game: Game) -> Result<(), sqlx::Error> {
     sqlx::query!(
         "INSERT INTO games (rawg_id, name, user_token) VALUES ($1, $2, $3)",
-        test_game.rawg_id,
-        test_game.name,
-        test_game.user_token,
+        game.rawg_id,
+        game.name,
+        game.user_token,
     )
     .execute(&db)
-    .await
-    .expect("fails");
+    .await?;
 
-    StatusCode::OK
+    Ok(())
 }

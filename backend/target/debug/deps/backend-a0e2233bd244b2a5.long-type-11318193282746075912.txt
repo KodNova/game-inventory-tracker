@@ -1,0 +1,2 @@
+fn(State<Pool<Postgres>>, axum::Json<Game>) -> impl Future<Output = axum::http::StatusCode> {add_game_handler}
+fn(State<Pool<Postgres>>, axum::Json<Game>) -> impl Future<Output = axum::http::StatusCode> {add_game_handler}: Handler<_, _>

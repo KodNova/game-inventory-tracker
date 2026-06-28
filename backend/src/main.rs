@@ -6,7 +6,7 @@ use axum::{
     http::{StatusCode, response},
     routing::{get, post},
 };
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use sqlx::PgPool;
 use tower_http::cors::{Any, CorsLayer};
 
@@ -29,6 +29,7 @@ async fn main() {
 
     let app = Router::new()
         .route("/add_game", post(add_game_handler))
+        .route("/get_recent_games", get(recent_games_handler))
         .layer(cors)
         .with_state(db);
 
@@ -63,4 +64,34 @@ async fn add_game_db(db: PgPool, game: Game) -> Result<(), sqlx::Error> {
     .await?;
 
     Ok(())
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct RAWGGame {
+    id: u32,
+    name: String,
+    released: Option<String>,
+    background_image: Option<String>,
+}
+
+#[derive(Deserialize, Serialize)]
+struct GamesResponse {
+    results: Vec<RAWGGame>,
+}
+
+async fn recent_games_handler() -> Result<Json<GamesResponse>, StatusCode> {
+    let api_key = std::env::var("RAWG_API").expect("RAWG_API not set");
+    let url = format!(
+        "https://api.rawg.io/api/games?key={}&ordering=-released&page_size=20",
+        api_key
+    );
+
+    let res = reqwest::get(&url)
+        .await
+        .map_err(|_| StatusCode::BAD_GATEWAY)?
+        .json::<GamesResponse>()
+        .await
+        .map_err(|_| StatusCode::BAD_GATEWAY)?;
+
+    Ok(Json(res))
 }

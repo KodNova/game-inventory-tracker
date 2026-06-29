@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 type Game = {
 	id: number;
@@ -20,17 +20,37 @@ async function getRecentGames(): Promise<Game[]> {
 }
 
 export default function RecentGames() {
-	const [games, setGames] = useState<Game[]>([]);
+	const {
+		data: games = [],
+		isLoading,
+		error,
+	} = useQuery({
+		queryKey: ["recentGames"],
+		queryFn: getRecentGames,
+	});
 
-	useEffect(() => {
-		getRecentGames().then(setGames).catch(console.error);
-	}, []);
+	if (isLoading) return <p>Loading...</p>;
+	if (error) return <p>Failed to load games.</p>;
 
 	return (
-		<ul>
+		<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{games.map((game) => (
-				<li key={game.id}>{game.name}</li>
+				<GameCard key={game.id} {...game} />
 			))}
-		</ul>
+		</div>
+	);
+}
+
+function GameCard(props: Game) {
+	return (
+		<div className="flex flex-col border justify-center items-center gap-1 p-2 border-neutral-600">
+			<img
+				alt="background_image"
+				src={props.background_image ?? undefined}
+				className="w-24"
+			/>
+			<p>{props.name}</p>
+			<p>{props.released}</p>
+		</div>
 	);
 }

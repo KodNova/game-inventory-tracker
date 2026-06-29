@@ -81,9 +81,11 @@ struct GamesResponse {
 
 async fn recent_games_handler() -> Result<Json<GamesResponse>, StatusCode> {
     let api_key = std::env::var("RAWG_API").expect("RAWG_API not set");
+    let today = chrono::Utc::now().format("%Y-%m-%d");
+
     let url = format!(
-        "https://api.rawg.io/api/games?key={}&ordering=-released&page_size=20",
-        api_key
+        "https://api.rawg.io/api/games?key={}&ordering=-released&page_size=20&dates=1990-01-01,{}",
+        api_key, today
     );
 
     let res = reqwest::get(&url)

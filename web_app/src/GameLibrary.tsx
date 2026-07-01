@@ -13,6 +13,7 @@ type Game = {
 	rawg_id: number;
 	name: string;
 	user_token: string;
+	background_image: string | null;
 };
 
 async function getGameLibrary(): Promise<Game[]> {
@@ -55,11 +56,11 @@ export default function GameLibrary() {
 function GameCard(props: Game) {
 	return (
 		<div className="flex flex-col border justify-center items-center gap-1 p-2 border-neutral-600">
-			{/* <img */}
-			{/* 	alt="background_image" */}
-			{/* 	src={props.background_image ?? undefined} */}
-			{/* 	className="w-24" */}
-			{/* /> */}
+			<img
+				alt="background_image"
+				src={props.background_image ?? undefined}
+				className="w-24"
+			/>
 			<p>{props.name}</p>
 			{/* <p>{props.released}</p> */}
 		</div>

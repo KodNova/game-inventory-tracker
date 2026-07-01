@@ -44,6 +44,7 @@ struct Game {
     rawg_id: i32,
     name: String,
     user_token: String,
+    background_image: Option<String>,
 }
 
 async fn add_game_handler(State(db): State<PgPool>, Json(payload): Json<Game>) -> StatusCode {
@@ -58,10 +59,11 @@ async fn add_game_handler(State(db): State<PgPool>, Json(payload): Json<Game>) -
 // only adds to db nothing else
 async fn add_game_db(db: PgPool, game: Game) -> Result<(), sqlx::Error> {
     sqlx::query!(
-        "INSERT INTO games (rawg_id, name, user_token) VALUES ($1, $2, $3)",
+        "INSERT INTO games (rawg_id, name, user_token, background_image) VALUES ($1, $2, $3, $4)",
         game.rawg_id,
         game.name,
         game.user_token,
+        game.background_image,
     )
     .execute(&db)
     .await?;
@@ -124,7 +126,7 @@ async fn user_games_handler(
 async fn get_user_games(db: PgPool, user_token: String) -> Result<Vec<Game>, sqlx::Error> {
     let games = sqlx::query_as!(
         Game,
-        "SELECT rawg_id, name, user_token FROM games WHERE user_token = $1",
+        "SELECT rawg_id, name, user_token, background_image FROM games WHERE user_token = $1",
         user_token
     )
     .fetch_all(&db)

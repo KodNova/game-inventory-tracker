@@ -30,13 +30,16 @@ async fn main() {
     let app = Router::new()
         .route("/add_game", post(add_game_handler))
         .route("/get_recent_games", get(recent_games_handler))
+        .route("/get_user_games/{user_token}", get(user_games_handler))
         .layer(cors)
         .with_state(db);
 
     axum::serve(listener, app).await.expect("serve fail");
 }
 
-#[derive(Deserialize)]
+// add games
+
+#[derive(Deserialize, Serialize)]
 struct Game {
     rawg_id: i32,
     name: String,
@@ -65,6 +68,8 @@ async fn add_game_db(db: PgPool, game: Game) -> Result<(), sqlx::Error> {
 
     Ok(())
 }
+
+// recent games
 
 #[derive(Debug, Deserialize, Serialize)]
 struct RAWGGame {
@@ -96,4 +101,34 @@ async fn recent_games_handler() -> Result<Json<GamesResponse>, StatusCode> {
         .map_err(|_| StatusCode::BAD_GATEWAY)?;
 
     Ok(Json(res))
+}
+
+//get users games
+
+#[derive(Serialize)]
+struct UserGamesResponse {
+    user_games: Vec<Game>,
+}
+
+async fn user_games_handler(
+    State(db): State<PgPool>,
+    axum::extract::Path(user_token): axum::extract::Path<String>,
+) -> Result<Json<UserGamesResponse>, StatusCode> {
+    let user_games = get_user_games(db, user_token)
+        .await
+        .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+
+    Ok(Json(UserGamesResponse { user_games }))
+}
+
+async fn get_user_games(db: PgPool, user_token: String) -> Result<Vec<Game>, sqlx::Error> {
+    let games = sqlx::query_as!(
+        Game,
+        "SELECT rawg_id, name, user_token FROM games WHERE user_token = $1",
+        user_token
+    )
+    .fetch_all(&db)
+    .await?;
+
+    Ok(games)
 }

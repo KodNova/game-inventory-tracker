@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import Header from "./Header";
 const user_token = "test";
 
 // type Game = {
@@ -40,10 +41,13 @@ export default function GameLibrary() {
 	if (error) return <p>Failed to load games.</p>;
 
 	return (
-		<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-			{games.map((game) => (
-				<GameCard key={game.rawg_id} {...game} />
-			))}
+		<div className="bg-neutral-700 h-screen">
+			<Header />
+			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+				{games.map((game) => (
+					<GameCard key={game.rawg_id} {...game} />
+				))}
+			</div>
 		</div>
 	);
 }
